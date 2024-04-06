@@ -5,11 +5,11 @@
         <node id="root">
             <children>
                 <node id="ExperienceReward">
-                    <attribute id="Level1" type="uint32" value="3"/>
-                    <attribute id="Level2" type="uint32" value="5"/>
-                    <attribute id="Level3" type="uint32" value="10"/>
-                    <attribute id="Level4" type="uint32" value="20"/>
-                    <attribute id="Level5" type="uint32" value="40"/>
+                    <attribute id="Level1" type="uint32" value="2"/>
+                    <attribute id="Level2" type="uint32" value="4"/>
+                    <attribute id="Level3" type="uint32" value="8"/>
+                    <attribute id="Level4" type="uint32" value="16"/>
+                    <attribute id="Level5" type="uint32" value="32"/>
                     <attribute id="LevelSource" type="uint8" value="1"/>
                     <attribute id="Name" type="FixedString" value="Pack"/>
                     <attribute id="RewardType" type="uint8" value="0"/>
@@ -18,26 +18,26 @@
                 <node id="ExperienceReward">
                     <!--Examples: (Prologue) Imp-->
                     <attribute id="Level1" type="uint32" value="8"/>
-                    <attribute id="Level2" type="uint32" value="15"/>
-                    <attribute id="Level3" type="uint32" value="20"/>
-                    <attribute id="Level4" type="uint32" value="40"/>
-                    <attribute id="Level5" type="uint32" value="75"/>
+                    <attribute id="Level2" type="uint32" value="12"/>
+                    <attribute id="Level3" type="uint32" value="16"/>
+                    <attribute id="Level4" type="uint32" value="32"/>
+                    <attribute id="Level5" type="uint32" value="60"/>
                     <attribute id="LevelSource" type="uint8" value="1"/>
                     <attribute id="Name" type="FixedString" value="Combatant"/>
                     <attribute id="RewardType" type="uint8" value="0"/>
                     <attribute id="UUID" type="guid" value="810b5510-6748-4c8e-bef0-d990880ed1dd"/>
                 </node>
-                <!--<node id="ExperienceReward">
-                    <attribute id="Level1" type="uint32" value="15"/>
-                    <attribute id="Level2" type="uint32" value="25"/>
-                    <attribute id="Level3" type="uint32" value="40"/>
-                    <attribute id="Level4" type="uint32" value="75"/>
-                    <attribute id="Level5" type="uint32" value="90"/>
+                <node id="ExperienceReward">
+                    <attribute id="Level1" type="uint32" value="12"/>
+                    <attribute id="Level2" type="uint32" value="20"/>
+                    <attribute id="Level3" type="uint32" value="32"/>
+                    <attribute id="Level4" type="uint32" value="60"/>
+                    <attribute id="Level5" type="uint32" value="72"/>
                     <attribute id="LevelSource" type="uint8" value="1"/>
                     <attribute id="Name" type="FixedString" value="Elite"/>
                     <attribute id="RewardType" type="uint8" value="0"/>
                     <attribute id="UUID" type="guid" value="4ee02692-eb98-43a6-803f-2da645364568"/>
-                </node>
+                </node><!--
                 <node id="ExperienceReward">
                     <attribute id="Level1" type="uint32" value="20"/>
                     <attribute id="Level2" type="uint32" value="40"/>
@@ -59,7 +59,7 @@
                     <attribute id="Name" type="FixedString" value="Boss"/>
                     <attribute id="RewardType" type="uint8" value="0"/>
                     <attribute id="UUID" type="guid" value="484393d9-eb7b-4b3b-b69b-5fdbfa940403"/>
-                </node>
+                </node>-->
                 <node id="ExperienceReward">
                     <attribute id="Level1" type="uint32" value="5"/>
                     <attribute id="Level2" type="uint32" value="10"/>
@@ -209,7 +209,7 @@
                     <attribute id="Name" type="FixedString" value="BackgroundGoal"/>
                     <attribute id="RewardType" type="uint8" value="2"/>
                     <attribute id="UUID" type="guid" value="90f636c0-2d85-46d8-9760-30b57c664f4b"/>
-                </node>-->
+                </node>
             </children>
         </node>
     </region>
