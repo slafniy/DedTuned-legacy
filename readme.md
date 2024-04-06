@@ -27,3 +27,9 @@ Lesser Hellsboar lv 1
 
 Cambion lv 4
 106 hp
+
+
+## Experience changes
+All sources: 80%
+Mini bosses: 150%
+Bosses: 200%
