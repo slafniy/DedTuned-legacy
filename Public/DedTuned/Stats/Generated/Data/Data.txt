@@ -1,1 +1,1 @@
-key "InitiativeDie","12"
+key "InitiativeDie","8"
