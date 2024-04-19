@@ -7,7 +7,7 @@ data "StatsFunctors" "IF(not HasPassive('Durable') and CheckRulesetModifier('1d9
 new entry "TavernBrawler"
 type "PassiveData"
 using "TavernBrawler"
-data "Boosts" " IF(IsMeleeUnarmedAttack()):RollBonus(Attack, StrengthModifier);IF(IsMeleeUnarmedAttack()):CharacterUnarmedDamage(StrengthModifier);IF(IsRangedUnarmedAttack()):RollBonus(Attack, StrengthModifier);IF(IsRangedUnarmedAttack()):DamageBonus(StrengthModifier)"
+data "Boosts" " IF(IsMeleeUnarmedAttack()):RollBonus(Attack, StrengthModifier);IF(IsMeleeUnarmedAttack()):CharacterUnarmedDamage(StrengthModifier);IF(IsRangedUnarmedAttack()):DamageBonus(StrengthModifier)"
 data "StatsFunctorContext" ""
 data "Conditions" ""
 data "StatsFunctors" ""
