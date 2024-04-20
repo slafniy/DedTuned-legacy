@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <contentList>
     <content contentuid="hb9fc2c60g7c3cg41bdg9efegdff67b60855d" version="1">Когда вы проводите атаку без оружия, используете импровизированное оружие или что-то бросаете, то дважды добавляете свой &lt;LSTag Tooltip="AbilityModifier"&gt;модификатор&lt;/LSTag&gt; силы к урону.</content>
+    <content contentuid="h6c2bbbeegc149g40bcg9575g5726f16270dd" version="1">Значение, которое необходимо &lt;LSTag Tooltip="AttackRoll"&gt;выбросить&lt;/LSTag&gt; при атаке, чтобы нанести &lt;LSTag Tooltip="CriticalHit"&gt;критический удар&lt;/LSTag&gt;, уменьшается на [1]. Этот эффект может складываться.</content>
 </contentList>

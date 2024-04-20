@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <contentList>
     <content contentuid="hb9fc2c60g7c3cg41bdg9efegdff67b60855d" version="1">When you make an unarmed attack, use an improvised weapon, or throw something, your Strength &lt;LSTag Tooltip="AbilityModifier"&gt;Modifier&lt;/LSTag&gt; is added twice to the damage.</content>
+    <content contentuid="h6c2bbbeegc149g40bcg9575g5726f16270dd" version="1">The number you need to &lt;LSTag Tooltip="AttackRoll"&gt;roll&lt;/LSTag&gt; a &lt;LSTag Tooltip="CriticalHit"&gt;Critical Hit&lt;/LSTag&gt; while attacking is reduced by [1]. This effect can stack.</content>
 </contentList>
