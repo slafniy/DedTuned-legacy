@@ -3,3 +3,21 @@ key "InitiativeDie","8"
 key "ExhaustedRest_HealthPercent","25"
 
 key "ExhaustedRest_ResourcePercent","0"
+
+key "FallDamageBaseDamage","0.01"
+
+key "FallDamageMinimumDistance","4"
+
+key "FallDamageMaximumDistance","21"
+
+key "FallDamageDamageType","3"
+
+key "FallDamagePronePercent","0.25"
+
+key "FallDamageMultiplierHugeGargantuan","2"
+
+key "FallImpactPushDistance","2"
+
+key "FallImpactConstant","0.000005"
+
+key "FallImpactMinWeight","0.5"
