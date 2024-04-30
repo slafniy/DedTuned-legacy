@@ -16,7 +16,7 @@ data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
 data "Icon" "Status_Sleep"
 data "StackId" "TIREDNESS_STACK_ID"
 data "StackType" "Additive"
-data "OnApplyFunctors" "IF(~HasStatus('TIREDNESS_DEBUFF')):SetStatusDuration(TIREDNESS_DEBUFF,1,ForceSet)"
+data "StatusPropertyFlags" "FreezeDuration;MultiplyEffectsByDuration"
 
 new entry "ADD_TIREDNESS_STACK_IN_COMBAT"
 type "PassiveData"
