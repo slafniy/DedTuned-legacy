@@ -1,30 +1,49 @@
-# Apply Tiredness for all possible player-controlled characters
+# Apply Tiredness mechanics for all possible player-controlled characters
 new entry "_Hero"
 type "Character"
 using "_Hero"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ADD_TIREDNESS_STACK_IN_COMBAT"
+data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;TIREDNESS_ADD_STACK_IN_COMBAT;TIREDNESS_ADD_DEBUFF"
 
 new entry "ORIGIN_Karlach"
 type "Character"
 using "ORIGIN_Karlach"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;ADD_TIREDNESS_STACK_IN_COMBAT"
+data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;TIREDNESS_ADD_STACK_IN_COMBAT;TIREDNESS_ADD_DEBUFF"
+
 
 
 # This debuff shows current level of Tiredness
-new entry "TIREDNESS_DEBUFF"
+new entry "TIREDNESS_DEBUFF_STACKS"
 type "StatusData"
 data "StatusType" "BOOST"
 data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
 data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
 data "Icon" "Status_Sleep"
-data "StackId" "TIREDNESS_STACK_ID"
+data "StackId" "TIREDNESS_DEBUFF_STACKS"
 data "StackType" "Additive"
 data "StatusPropertyFlags" "FreezeDuration;MultiplyEffectsByDuration;ApplyToDead"
 
+# This debuff appears when Tiredness stacks reach level 1
+new entry "TIREDNESS_DEBUFF_LEVEL_1"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
+data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
+data "Icon" "Status_Prone"
+data "StatusPropertyFlags" "FreezeDuration"
+
+
 # Adds +1 stack of Tiredness every time when character turn starts in combat
-new entry "ADD_TIREDNESS_STACK_IN_COMBAT"
+new entry "TIREDNESS_ADD_STACK_IN_COMBAT"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnTurn"
 data "Conditions" "Combat()"
-data "StatsFunctors" "ApplyStatus(SELF,TIREDNESS_DEBUFF,100,1)"
+data "StatsFunctors" "ApplyStatus(SELF,TIREDNESS_DEBUFF_STACKS,100,1)"
+
+# Adds Tiredness Debuffs if condition matched
+new entry "TIREDNESS_ADD_DEBUFF"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnTurn"
+data "Conditions" "Combat()"
+data "StatsFunctors" "IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',1)):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1,100,1)"
