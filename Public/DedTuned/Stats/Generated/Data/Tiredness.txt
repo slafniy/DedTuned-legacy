@@ -29,7 +29,6 @@ data "StatusType" "BOOST"
 data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
 data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
 data "Icon" "Status_Prone"
-data "StatusPropertyFlags" "FreezeDuration"
 
 # DEBUFF: Tiredness level 2
 new entry "TIREDNESS_DEBUFF_LEVEL_2"
@@ -37,10 +36,39 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
 data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
+data "Icon" "Status_Exhaustion"
+
+# DEBUFF: Tiredness level 3
+new entry "TIREDNESS_DEBUFF_LEVEL_3"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
+data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
 data "Icon" "Status_Restrained"
-data "StatusPropertyFlags" "FreezeDuration"
 
+# DEBUFF: Tiredness level 4
+new entry "TIREDNESS_DEBUFF_LEVEL_4"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
+data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
+data "Icon" "Status_Paralyzed"
 
+# DEBUFF: Tiredness level 5
+new entry "TIREDNESS_DEBUFF_LEVEL_5"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
+data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
+data "Icon" "Status_Unconscious"
+
+# DEBUFF: Tiredness level 6
+new entry "TIREDNESS_DEBUFF_LEVEL_6"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
+data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
+data "Icon" "Status_Dying"
 
 # PASSIVE: Adds +1 stack of Tiredness every time when character turn starts in combat
 new entry "TIREDNESS_ADD_STACK_IN_COMBAT"
@@ -55,5 +83,4 @@ new entry "TIREDNESS_ADD_DEBUFF"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnTurn"
-data "StatsFunctors" "IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',2) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_1')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1,100,1)
-                     ;IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',3) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_2')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_2,100,1)"
+data "StatsFunctors" "IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',0) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_1')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1,100,-1);IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',1) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_2')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_2,100,-1);IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',2) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_3')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_3,100,-1);IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',3) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_4')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_4,100,-1);IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',4) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_5')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_5,100,-1);IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',5) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_6')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_6,100,-1)"
