@@ -1,3 +1,4 @@
+# Apply Tiredness for all possible player-controlled characters
 new entry "_Hero"
 type "Character"
 using "_Hero"
@@ -8,6 +9,8 @@ type "Character"
 using "ORIGIN_Karlach"
 data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;ADD_TIREDNESS_STACK_IN_COMBAT"
 
+
+# This debuff shows current level of Tiredness
 new entry "TIREDNESS_DEBUFF"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -18,11 +21,9 @@ data "StackId" "TIREDNESS_STACK_ID"
 data "StackType" "Additive"
 data "StatusPropertyFlags" "FreezeDuration;MultiplyEffectsByDuration;ApplyToDead"
 
+# Adds +1 stack of Tiredness every time when character turn starts in combat
 new entry "ADD_TIREDNESS_STACK_IN_COMBAT"
 type "PassiveData"
-data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
-data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
-data "Icon" "Status_Sleep"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnTurn"
 data "Conditions" "Combat()"
