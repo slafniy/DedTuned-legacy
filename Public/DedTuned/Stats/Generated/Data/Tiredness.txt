@@ -2,12 +2,12 @@
 new entry "_Hero"
 type "Character"
 using "_Hero"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;TIREDNESS_ADD_STACK_IN_COMBAT;TIREDNESS_ADD_DEBUFF"
+data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;TIREDNESS_ADD_DEBUFF;TIREDNESS_ADD_STACK_IN_COMBAT"
 
 new entry "ORIGIN_Karlach"
 type "Character"
 using "ORIGIN_Karlach"
-data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;TIREDNESS_ADD_STACK_IN_COMBAT;TIREDNESS_ADD_DEBUFF"
+data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;DarknessRules;CombatStartAttack;ORI_Karlach_SweatImmune;TIREDNESS_ADD_DEBUFF;TIREDNESS_ADD_STACK_IN_COMBAT"
 
 
 
@@ -45,5 +45,4 @@ new entry "TIREDNESS_ADD_DEBUFF"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnTurn"
-data "Conditions" "Combat()"
 data "StatsFunctors" "IF(StatusDurationEqualOrMoreThan(context.Source,'TIREDNESS_DEBUFF_STACKS',1)):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1,100,1)"
