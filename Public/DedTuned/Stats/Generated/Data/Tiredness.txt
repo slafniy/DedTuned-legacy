@@ -11,7 +11,7 @@ data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;
 
 
 
-# This debuff shows current level of Tiredness
+# DEBUFF: shows current level of Tiredness
 new entry "TIREDNESS_DEBUFF_STACKS"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -22,7 +22,7 @@ data "StackId" "TIREDNESS_DEBUFF_STACKS"
 data "StackType" "Additive"
 data "StatusPropertyFlags" "FreezeDuration;MultiplyEffectsByDuration;ApplyToDead"
 
-# This debuff appears when Tiredness stacks reach level 1
+# DEBUFF: Tiredness level 1
 new entry "TIREDNESS_DEBUFF_LEVEL_1"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -31,8 +31,18 @@ data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
 data "Icon" "Status_Prone"
 data "StatusPropertyFlags" "FreezeDuration"
 
+# DEBUFF: Tiredness level 2
+new entry "TIREDNESS_DEBUFF_LEVEL_2"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
+data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
+data "Icon" "Status_Restrained"
+data "StatusPropertyFlags" "FreezeDuration"
 
-# Adds +1 stack of Tiredness every time when character turn starts in combat
+
+
+# PASSIVE: Adds +1 stack of Tiredness every time when character turn starts in combat
 new entry "TIREDNESS_ADD_STACK_IN_COMBAT"
 type "PassiveData"
 data "Properties" "IsHidden"
@@ -40,7 +50,7 @@ data "StatsFunctorContext" "OnTurn"
 data "Conditions" "Combat()"
 data "StatsFunctors" "ApplyStatus(SELF,TIREDNESS_DEBUFF_STACKS,100,1)"
 
-# Adds Tiredness Debuffs if condition matched
+# PASSIVE: Adds Tiredness Debuffs if condition matched
 new entry "TIREDNESS_ADD_DEBUFF"
 type "PassiveData"
 data "Properties" "IsHidden"
