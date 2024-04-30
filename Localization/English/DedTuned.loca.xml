@@ -10,4 +10,6 @@
     <content contentuid="h5e392bd2g8456g4a43g9569g923af01fda43" version="1">Pick up an item or creature and throw it at a target, dealing additional damage and knocking it &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;. &lt;br&gt;&lt;br&gt;Will cause a stack of &lt;LSTag Type="Status" Tooltip="RAGE_FRENZY_BURNOUT"&gt;Frenzied Strain&lt;/LSTag&gt; on the barbarian.</content>
     <content contentuid="h8770a174gdbadg4351g92f8ge79025cb52df" version="1">Using Frenzied Strike adds a penalty to Attack Rolls every time, stacking so that you miss more often. This adds up until the end of your Frenzy.</content>
     <content contentuid="h2273d2fbg754fg4516gb043g7cc822af735b" version="1">Will cause a stack of &lt;LSTag Type="Status" Tooltip="RAGE_FRENZY_BURNOUT"&gt;Frenzied Strain&lt;/LSTag&gt; on the barbarian.</content>
+    <content contentuid="h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99" version="1">Tiredness</content>
+    <content contentuid="h2c80a44eg9020g4d93gbdebg50abf17df167" version="1">Tiredness description</content>
 </contentList>
