@@ -11,42 +11,18 @@ data "Passives" "ShortResting;NonLethal;WeaponThrow;Perform;AttackOfOpportunity;
 
 
 
-# DEBUFF: shows current level of Tiredness
+# DEBUFF: shows current level of Tiredness and applies debuffs on certain breakpoints
 new entry "TIREDNESS_DEBUFF_STACKS"
 type "StatusData"
 data "StatusType" "BOOST"
 data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
 data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
-data "Icon" "Status_Positive"
+data "Icon" "Status_Exhaustion"
 data "StackId" "TIREDNESS_DEBUFF_STACKS"
 data "StackType" "Additive"
 data "StatusPropertyFlags" "FreezeDuration;MultiplyEffectsByDuration;ApplyToDead"
 data "TickType" "EndTurn"
-data "TickFunctors" "IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',1) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_1')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',2) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_2')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_2,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',3) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_3')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_3,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',4) and not HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):ApplyStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',5) and not HasStatus('TIREDNESS_DEBUFF_DEATH')):ApplyStatus(SELF,TIREDNESS_DEBUFF_DEATH,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',1) and HasStatus('TIREDNESS_DEBUFF_LEVEL_1')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',2) and HasStatus('TIREDNESS_DEBUFF_LEVEL_2')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_2);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',3) and HasStatus('TIREDNESS_DEBUFF_LEVEL_3')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_3);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',4) and HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):RemoveStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',5) and HasStatus('TIREDNESS_DEBUFF_DEATH')):RemoveStatus(SELF,TIREDNESS_DEBUFF_DEATH)"
-
-# DEBUFF: Tiredness level 1
-new entry "TIREDNESS_DEBUFF_LEVEL_1"
-type "StatusData"
-data "StatusType" "BOOST"
-data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
-data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
-data "Icon" "Status_Prone"
-
-# DEBUFF: Tiredness level 2
-new entry "TIREDNESS_DEBUFF_LEVEL_2"
-type "StatusData"
-data "StatusType" "BOOST"
-data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
-data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
-data "Icon" "Status_Exhaustion"
-
-# DEBUFF: Tiredness level 3
-new entry "TIREDNESS_DEBUFF_LEVEL_3"
-type "StatusData"
-data "StatusType" "BOOST"
-data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
-data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
-data "Icon" "Status_Restrained"
+data "TickFunctors" "IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',20) and not HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):ApplyStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',20) and HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):RemoveStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',30) and not HasStatus('TIREDNESS_DEBUFF_DEATH')):ApplyStatus(SELF,TIREDNESS_DEBUFF_DEATH,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',30) and HasStatus('TIREDNESS_DEBUFF_DEATH')):RemoveStatus(SELF,TIREDNESS_DEBUFF_DEATH)"
 
 # DEBUFF: Tiredness level 4 - SLEEP
 # If not passed CON save falls asleep
@@ -88,4 +64,4 @@ new entry "TIREDNESS_REMOVE_STACKS_ON_SHORT_REST"
 type "PassiveData"
 data "Properties" "IsHidden"
 data "StatsFunctorContext" "OnShortRest"
-data "StatsFunctors" "ApplyStatus(SELF,TIREDNESS_DEBUFF_STACKS,100,-1)"
+data "StatsFunctors" "ApplyStatus(SELF,TIREDNESS_DEBUFF_STACKS,100,-20)"
