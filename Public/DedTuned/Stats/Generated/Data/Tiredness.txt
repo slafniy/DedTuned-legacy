@@ -17,12 +17,12 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
 data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
-data "Icon" "Status_Sleep"
+data "Icon" "Status_Positive"
 data "StackId" "TIREDNESS_DEBUFF_STACKS"
 data "StackType" "Additive"
 data "StatusPropertyFlags" "FreezeDuration;MultiplyEffectsByDuration;ApplyToDead"
-data "TickType" "StartTurn"
-data "TickFunctors" "IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',1) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_1')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',2) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_2')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_2,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',3) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_3')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_3,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',4) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_4')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_4,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',5) and not HasStatus('TIREDNESS_DEBUFF_DEATH')):ApplyStatus(SELF,TIREDNESS_DEBUFF_DEATH,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',1) and HasStatus('TIREDNESS_DEBUFF_LEVEL_1')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',2) and HasStatus('TIREDNESS_DEBUFF_LEVEL_2')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_2);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',3) and HasStatus('TIREDNESS_DEBUFF_LEVEL_3')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_3);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',4) and HasStatus('TIREDNESS_DEBUFF_LEVEL_4')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_4);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',5) and HasStatus('TIREDNESS_DEBUFF_DEATH')):RemoveStatus(SELF,TIREDNESS_DEBUFF_DEATH)"
+data "TickType" "EndTurn"
+data "TickFunctors" "IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',1) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_1')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',2) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_2')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_2,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',3) and not HasStatus('TIREDNESS_DEBUFF_LEVEL_3')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LEVEL_3,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',4) and not HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):ApplyStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP,100,-1);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',5) and not HasStatus('TIREDNESS_DEBUFF_DEATH')):ApplyStatus(SELF,TIREDNESS_DEBUFF_DEATH,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',1) and HasStatus('TIREDNESS_DEBUFF_LEVEL_1')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',2) and HasStatus('TIREDNESS_DEBUFF_LEVEL_2')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_2);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',3) and HasStatus('TIREDNESS_DEBUFF_LEVEL_3')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LEVEL_3);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',4) and HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):RemoveStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',5) and HasStatus('TIREDNESS_DEBUFF_DEATH')):RemoveStatus(SELF,TIREDNESS_DEBUFF_DEATH)"
 
 # DEBUFF: Tiredness level 1
 new entry "TIREDNESS_DEBUFF_LEVEL_1"
@@ -48,13 +48,20 @@ data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
 data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
 data "Icon" "Status_Restrained"
 
-# DEBUFF: Tiredness level 4
-new entry "TIREDNESS_DEBUFF_LEVEL_4"
+# DEBUFF: Tiredness level 4 - SLEEP
+# If not passed CON save falls asleep
+new entry "TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP"
 type "StatusData"
 data "StatusType" "BOOST"
-data "DisplayName" "h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99;1"
-data "Description" "h2c80a44eg9020g4d93gbdebg50abf17df167;1"
-data "Icon" "Status_Paralyzed"
+data "DisplayName" "h366f465ag287ag4ffbgb155gb3e2eae42575;1"
+data "Description" "h5a57a63cg3578g4cd0gb895g5b16a105eb23;1"
+data "DescriptionParams" "15"
+data "Icon" "Status_Sleep"
+data "TickType" "EndTurn"
+data "OnTickRoll" "not SavingThrow(Ability.Constitution, 15)"
+data "OnTickSuccess" "ApplyStatus(SLEEPING,100,1)"
+data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, 15)):ApplyStatus(SLEEPING,100,1)"
+data "TooltipSave" "Constitution"
 
 # DEBUFF: Tiredness level 5 - DEATH
 new entry "TIREDNESS_DEBUFF_DEATH"
