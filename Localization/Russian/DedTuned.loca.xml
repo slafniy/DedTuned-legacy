@@ -12,4 +12,6 @@
     <content contentuid="h2273d2fbg754fg4516gb043g7cc822af735b" version="1">Дает варвару уровень &lt;LSTag Type="Status" Tooltip="RAGE_FRENZY_BURNOUT"&gt;Бешеного Напряжения&lt;/LSTag&gt;.</content>
     <content contentuid="h34f7d8d7gc6b8g4fa2g81f5g7636c1a91f99" version="1">Усталость</content>
     <content contentuid="h2c80a44eg9020g4d93gbdebg50abf17df167" version="1">Описание усталости</content>
+    <content contentuid="h4568bcf8g51b7g42c3gb7a5g259d2b0d12f4" version="1">Смертельное истощение</content>
+    <content contentuid="h9a276103g3eb8g4a50g90aeg5828c7d4aad6" version="1">Это существо умрёт в конце своего хода.</content>
 </contentList>
