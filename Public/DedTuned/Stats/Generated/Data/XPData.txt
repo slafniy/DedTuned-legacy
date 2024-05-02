@@ -1,6 +1,6 @@
-key "Level1","345"
+key "Level1","300"
 
-key "Level2","600"
+key "Level2","690"
 
 key "Level3","2070"
 
