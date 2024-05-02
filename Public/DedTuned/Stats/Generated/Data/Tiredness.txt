@@ -22,23 +22,21 @@ data "StackId" "TIREDNESS_DEBUFF_STACKS"
 data "StackType" "Additive"
 data "StatusPropertyFlags" "FreezeDuration;MultiplyEffectsByDuration;ApplyToDead;DisableCombatlog;DisableOverhead"
 data "TickType" "EndTurn"
-data "TickFunctors" "IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',1) and not HasStatus('TIREDNESS_DEBUFF_LIGHT')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LIGHT,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',1) and HasStatus('TIREDNESS_DEBUFF_LIGHT')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LIGHT);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',50) and not HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):ApplyStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',50) and HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):RemoveStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',60) and not HasStatus('TIREDNESS_DEBUFF_DEATH')):ApplyStatus(SELF,TIREDNESS_DEBUFF_DEATH,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',60) and HasStatus('TIREDNESS_DEBUFF_DEATH')):RemoveStatus(SELF,TIREDNESS_DEBUFF_DEATH)"
+data "TickFunctors" "IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',30) and not HasStatus('TIREDNESS_DEBUFF_LIGHT')):ApplyStatus(SELF,TIREDNESS_DEBUFF_LIGHT,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',30) and HasStatus('TIREDNESS_DEBUFF_LIGHT')):RemoveStatus(SELF,TIREDNESS_DEBUFF_LIGHT);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',50) and not HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):ApplyStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',50) and HasStatus('TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP')):RemoveStatus(SELF,TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP);IF(StatusDurationEqualOrMoreThan(SELF,'TIREDNESS_DEBUFF_STACKS',60) and not HasStatus('TIREDNESS_DEBUFF_DEATH')):ApplyStatus(SELF,TIREDNESS_DEBUFF_DEATH,100,-1);IF(StatusDurationLessThan(SELF,'TIREDNESS_DEBUFF_STACKS',60) and HasStatus('TIREDNESS_DEBUFF_DEATH')):RemoveStatus(SELF,TIREDNESS_DEBUFF_DEATH)"
 
-# DEBUFF: Tiredness level 1 - LIGHT
+# DEBUFF: Tiredness level 1 - SLIGHT FATIGUE
 # Slightly reduced move speed, light penalty on ability checks, attack rolls, spell DC and saving throws
 new entry "TIREDNESS_DEBUFF_LIGHT"
 type "StatusData"
 data "StatusType" "BOOST"
 data "DisplayName" "h3ba53e30g3696g4b88ga0fbg9384a90f24bd;1"
 data "Description" "h2ca02a2eg8501g4bd1gb598ge5c396b52493;1"
-data "DescriptionParams" "1d4;2"
+data "DescriptionParams" "-2"
 data "Icon" "Spell_Enchantment_Bane"
 data "StillAnimationType" "Weakened"
 data "StillAnimationPriority" "Weakened"
-data "Boosts" "RollBonus(Attack,-1d4);RollBonus(SavingThrow,-1d4);SpellSaveDC(-2);RollBonus(SkillCheck,-1d4);RollBonus(RawAbility,-1d4)"
-data "StatusEffect" "0ef1d491-9ef8-4da2-af70-77e5f3f3e812"
-data "ManagedStatusEffectType" "Negative"
-data "ManagedStatusEffectGroup" "d787f666-8ee6-4185-9365-6aac9ebe76ae"
+data "Boosts" "RollBonus(Attack,-2);RollBonus(SavingThrow,-2);SpellSaveDC(-2);RollBonus(SkillCheck,-2);RollBonus(RawAbility,-2)"
+data "StatusGroups" "SG_Condition"
 
 
 # DEBUFF: Tiredness level 4 - SLEEP
