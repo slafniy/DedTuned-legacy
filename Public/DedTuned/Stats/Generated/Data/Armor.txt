@@ -9,7 +9,7 @@ data "ValueUUID" "4024ce6c-f02d-4d7c-8033-869ada06ef82"
 data "ValueScale" "1"
 data "Rarity" "Uncommon"
 data "Boosts" ""
-data "PassivesOnEquip" "ARM_SuperiorPadding_1_Passive;ARM_Light_Finesse_Roll_Bonus_Passive_1"
+data "PassivesOnEquip" "ARM_SuperiorPadding_1_Passive"
 
 new entry "ARM_Light_Finesse_Roll_Bonus_Passive_1"
 type "PassiveData"
