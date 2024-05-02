@@ -108,3 +108,13 @@ Note: default cost does not make any sense because you cannot run out of supplie
 Note: first, it's impossible to balance out Multiclassing with my experience, knowledge and tools. 
 Second, I personally don't like it as a concept because it looks like abusing combination of too strong low-level features which are essential for pure class and could not be nerfed too much.
 Proper multiclassing should include some lore limitations, karma mechanics of something else, which is not the case in BG3.
+
+### Tiredness - new mechanics
+An attempt to create a new mechanics, which forces party to rest more often. Not a direct adaptation of dnd5e Exhaustion.  
+In a combat characters will get Tiredness stacks, which on some point lead to various consequences:
+- Level 1 (30+ stacks): slight fatigue. A penalty to attack rolls, saving throws, ability checks, skill checks and spell DC
+- Level 2 (40+ stacks): WIP
+- Level 3 (50+ stacks): Uncontrollable sleep. Every turn character must perform CON saving throw or will fall asleep
+- Level 4 (60+ stacks): Death.
+
+Long Rest (with supplies) removes all Tiredness stacks, Short Rest removes 20. 
