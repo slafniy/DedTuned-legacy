@@ -6,4 +6,6 @@
     <content contentuid="h9a276103g3eb8g4a50g90aeg5828c7d4aad6" version="1">Это существо умрёт в конце своего хода.</content>
     <content contentuid="h366f465ag287ag4ffbgb155gb3e2eae42575" version="1">Депривация сна</content>
     <content contentuid="h5a57a63cg3578g4cd0gb895g5b16a105eb23" version="1">Это существо должно проходить &lt;LSTag Tooltip="SavingThrow"&gt;испытания&lt;/LSTag&gt; выносливости КС [1] каждый ход, или оно уснёт.</content>
+    <content contentuid="h3ba53e30g3696g4b88ga0fbg9384a90f24bd" version="1">Легкая усталость</content>
+    <content contentuid="h2ca02a2eg8501g4bd1gb598ge5c396b52493" version="1">Это существо долго сражалось и истощило свои силы. Оно получает штраф [1] к &lt;LSTag Tooltip="SavingThrow"&gt;испытаниям&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;проверкам характеристик&lt;/LSTag&gt; и &lt;LSTag Tooltip="AttackRoll"&gt;броскам атаки&lt;/LSTag&gt;, и -[2] к &lt;LSTag Tooltip="DifficultyClass"&gt;классу сложности&lt;/LSTag&gt; заклинаний.</content>
 </contentList>

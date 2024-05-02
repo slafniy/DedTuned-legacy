@@ -6,4 +6,6 @@
     <content contentuid="h9a276103g3eb8g4a50g90aeg5828c7d4aad6" version="1">This creature will die at the end of his turn.</content>
     <content contentuid="h366f465ag287ag4ffbgb155gb3e2eae42575" version="1">Sleep deprivation</content>
     <content contentuid="h5a57a63cg3578g4cd0gb895g5b16a105eb23" version="1">This creature should pass constitution &lt;LSTag Tooltip="SavingThrow"&gt;saving throw&lt;/LSTag&gt; DC [1] every turn or fall asleep.</content>
+    <content contentuid="h3ba53e30g3696g4b88ga0fbg9384a90f24bd" version="1">Slight fatigue</content>
+    <content contentuid="h2ca02a2eg8501g4bd1gb598ge5c396b52493" version="1">This creature fought for a long time and exhausted its strength. It takes [1] penalty on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; and &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt;, and -[2] to spell &lt;LSTag Tooltip="DifficultyClass"&gt;Difficulty Class&lt;/LSTag&gt;.</content>
 </contentList>
