@@ -4130,7 +4130,7 @@
                                                     <Setter Property="IsEnabled" Value="False"/>
                                                 </DataTrigger>
                                                 <!-- Block LongRest if not enough supplies -->
-                                                <DataTrigger Binding="{Binding CurrentPlayer.PartySupplies, Converter={StaticResource LessThanConverter}, ConverterParameter=CurrentPlayer.RequiredPartySupplies}" Value="True">
+                                                <DataTrigger Binding="{Binding CurrentPlayer.PartySupplies, Converter={StaticResource LessThanConverter}, ConverterParameter=250}" Value="True">
                                                     <Setter Property="IsEnabled" Value="False"/>
                                                 </DataTrigger>
 
