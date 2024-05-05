@@ -39,7 +39,7 @@ data "Boosts" "RollBonus(Attack,-2);RollBonus(SavingThrow,-2);SpellSaveDC(-2);Ro
 data "StatusGroups" "SG_Condition"
 
 
-# DEBUFF: Tiredness level 4 - SLEEP
+# DEBUFF: Tiredness level 2 - SLEEP
 # If not passed CON save falls asleep
 new entry "TIREDNESS_DEBUFF_UNCONTROLLABLE_SLEEP"
 type "StatusData"
@@ -56,7 +56,7 @@ data "OnTickSuccess" "ApplyStatus(SLEEPING,100,1)"
 data "OnApplyFunctors" "IF(not SavingThrow(Ability.Constitution, 15)):ApplyStatus(SLEEPING,100,1)"
 data "TooltipSave" "Constitution"
 
-# DEBUFF: Tiredness level 5 - DEATH
+# DEBUFF: Tiredness level 3 - DEATH
 new entry "TIREDNESS_DEBUFF_DEATH"
 type "StatusData"
 data "StatusType" "BOOST"
