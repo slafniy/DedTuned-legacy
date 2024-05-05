@@ -1,6 +1,6 @@
 new entry "Target_TrueStrike"
 type "SpellData"
-data "Cooldown" "OncePerCombat"
+data "Cooldown" "OncePerShortRest"
 data "SpellType" "Target"
 data "Level" "0"
 data "SpellSchool" "Divination"
