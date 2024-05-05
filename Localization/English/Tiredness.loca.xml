@@ -8,4 +8,6 @@
     <content contentuid="h5a57a63cg3578g4cd0gb895g5b16a105eb23" version="1">This creature should pass constitution &lt;LSTag Tooltip="SavingThrow"&gt;saving throw&lt;/LSTag&gt; DC [1] every turn or fall asleep.</content>
     <content contentuid="h3ba53e30g3696g4b88ga0fbg9384a90f24bd" version="1">Slight fatigue</content>
     <content contentuid="h2ca02a2eg8501g4bd1gb598ge5c396b52493" version="1">This creature fought for a long time and exhausted its strength. It takes [1] penalty on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;, &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt;, &lt;LSTag Tooltip="SkillCheck"&gt;Skill Checks&lt;/LSTag&gt;, &lt;LSTag Tooltip="AttackRoll"&gt;Attack Rolls&lt;/LSTag&gt; and spell &lt;LSTag Tooltip="DifficultyClass"&gt;Difficulty Class&lt;/LSTag&gt;.</content>
+    <content contentuid="h81842d9eg5a97g4d31ga85aged127ace8dd3" version="1">Resistance to sleep deprivation</content>
+    <content contentuid="h7d01f311ge446g4f72g839age36ec4763782" version="1">This creature has successfully passed constitution check and became temporarily immune to effects of sleep deprivation.</content>
 </contentList>
