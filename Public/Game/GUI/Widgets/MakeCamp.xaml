@@ -184,14 +184,16 @@
                 <ls:LSButton Style="{DynamicResource BrownButtonStyle}" Command="{Binding AutoSelectCommand}" CommandParameter="{Binding ElementName=SuppliesView, Path=SelectedItems}" 
                                  Content="{Binding Source='h520e6ffag14aag4d3aga15dg1ed8d9a0b852', Converter={StaticResource TranslatedStringConverter}}"
                                  HorizontalAlignment="Center" VerticalAlignment="Center"  SoundID="UI_HUD_LongRest_AutoSelect"/>
-                        </Grid>
+            </Grid>
 
             <ls:LSButton Command="{Binding ProcessRestCommand}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,220">
                 <ls:LSButton.Style>
                     <Style BasedOn="{StaticResource BlueEdgeButtonStyle}" TargetType="ls:LSButton">
                         <Setter Property="Content" Value="{Binding Source='h7e75fd8fgc164g436fgbbf7gc0b993f7fee8', Converter={StaticResource TranslatedStringConverter}}"/>
+                        <Setter Property="Visibility" Value="Hidden"/>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding Tag, ElementName=root}" Value="True">
+                                <Setter Property="Visibility" Value="Visible"/>
                                 <Setter Property="Content" Value="{Binding Source='h8eb28360g171eg47a7g8915g31d5ebd7198d', Converter={StaticResource TranslatedStringConverter}}"/>
                                 <Setter Property="Foreground" Value="{DynamicResource LS_specialTxtColor}"/>
                                 <Setter Property="SoundID" Value="UI_HUD_LongRest"/>
