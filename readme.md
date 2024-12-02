@@ -1,3 +1,6 @@
+# Pre-toolkit version.
+Project converted for BG3 toolkit and moved to https://github.com/slafniy/DedTunedProject
+
 # DedTuned balance mod for Larian's Baldur's Gate 3 (WIP)
 The final goals of this mod:
 - Make Honor mode slightly harder
